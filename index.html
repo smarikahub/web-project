@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groot Travels</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7eceb;
+            color: #5a5a5a;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #eac7c4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 3em;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: #eac7c4;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: #eac7c4;
+            margin: 10px auto 0;
+            border-radius: 5px;
+        }
+
+        .destination {
+            display: inline-block;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .destination img {
+            width: 200px;
+            height: 150px;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+
+        .destination img:hover {
+            transform: scale(1.1);
+        }
+
+        .package {
+            font-size: 1.8em;
+            color: #ff6f61;
+            background-color: #ffe3e1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #eac7c4;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+
+        form button:hover {
+            background-color: #dca3a1;
+        }
+    </style>
+    <script>
+        function showDomestic() {
+            document.getElementById('international').style.display = 'none';
+            document.getElementById('domestic').style.display = 'block';
+        }
+
+        function showInternational() {
+            document.getElementById('domestic').style.display = 'none';
+            document.getElementById('international').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Groot Travels</h1>
+        <nav>
+            <ul>
+                <li><a href="#destinations" onclick="showInternational()">International</a></li>
+                <li><a href="#destinations" onclick="showDomestic()">Domestic</a></li>
+                <li><a href="#packages">Special Packages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="destinations">
+        <h2>Popular Destinations</h2>
+        <div id="international">
+            <div class="destination">
+                <img src="paris.jpg" alt="Paris">
+                <h3>Paris</h3>
+            </div>
+            <div class="destination">
+                <img src="NY.jpg" alt="New York">
+                <h3>New York</h3>
+            </div>
+            <div class="destination">
+                <img src="lasvegas.jpg" alt="Las Vegas">
+                <h3>Las Vegas</h3>
+            </div>
+            <div class="destination">
+                <img src="venice.jpg" alt="Venice">
+                <h3>Venice</h3>
+            </div>
+            <div class="destination">
+                <img src="disney.jpg" alt="Disneyland of Tokyo">
+                <h3>Disneyland of Tokyo</h3>
+            </div>
+        </div>
+        <div id="domestic" style="display:none;">
+            <div class="destination">
+                <img src="mustang.jpg" alt="Mustang of Nepal">
+                <h3>Mustang of Nepal</h3>
+            </div>
+            <div class="destination">
+                <img src="rara.jpg" alt="Rara Tal of Nepal">
+                <h3>Rara Tal of Nepal</h3>
+            </div>
+        </div>
+    </section>
+    <section id="packages">
+        <h2>Special Packages</h2>
+        <div class="package">
+            <p>Couple Special: $50 off!</p>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</body>
+</html>
